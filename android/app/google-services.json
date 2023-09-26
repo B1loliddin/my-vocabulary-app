@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "476916085720",
+    "project_id": "my-vocabulary-app-2ed88",
+    "storage_bucket": "my-vocabulary-app-2ed88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:476916085720:android:4ee7f079b1b3be0081f8ad",
+        "android_client_info": {
+          "package_name": "com.pdp.my_vocabulary_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlgH2H9Q2shKI9ECxP0vuCGRN2ix66XoA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
