@@ -49,6 +49,11 @@ sealed class DatabaseService {
     try {
       final DatabaseReference folder = database.ref(Folder.word);
       final DataSnapshot data = await folder.get();
+
+      if (data.value == null) {
+        return [];
+      }
+
       final Map<dynamic, dynamic> json =
           jsonDecode(jsonEncode(data.value)) as Map;
 
@@ -112,9 +117,13 @@ sealed class DatabaseService {
           .orderByChild('userId')
           .equalTo(AuthService.currentUser.uid)
           .once();
+
+      if (data.snapshot.value == null) {
+        return [];
+      }
+
       final Map<dynamic, dynamic> json =
           jsonDecode(jsonEncode(data.snapshot.value)) as Map;
-      debugPrint(json.toString());
 
       return json.values
           .map((item) => WordModel.fromJson(item as Map<String, Object?>))

@@ -12,8 +12,9 @@ class MyWordsPage extends StatefulWidget {
 }
 
 class _MyWordsPageState extends State<MyWordsPage> {
-  void _getData() =>
-      BlocProvider.of<MainBloc>(context).add(const FetchMyWordsEvent());
+  void _getData() => BlocProvider.of<MainBloc>(context).add(
+        const FetchMyWordsEvent(),
+      );
 
   void _showErrorMessage(String text) {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -64,29 +65,35 @@ class _MyWordsPageState extends State<MyWordsPage> {
                 itemBuilder: (context, index) {
                   final WordModel wordModel = state.words[index];
 
-                  return Card(
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(8)),
-                    ),
-                    child: ListTile(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(8)),
-                      ),
-                      onLongPress: () {
-                        _deleteWord(wordModel.id);
-                      },
-                      title: Text(
-                        '${wordModel.word} - ${wordModel.translation}',
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      subtitle: Text(
-                        wordModel.definition,
-                        maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  );
+                  return state.words.isNotEmpty
+                      ? Card(
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                          child: ListTile(
+                            shape: const RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8)),
+                            ),
+                            onLongPress: () {
+                              _deleteWord(wordModel.id);
+                            },
+                            title: Text(
+                              '${wordModel.word} - ${wordModel.translation}',
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            subtitle: Text(
+                              wordModel.definition,
+                              maxLines: 5,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        )
+                      : Text(
+                          'Empty',
+                          style: Theme.of(context).textTheme.headlineSmall,
+                        );
                 },
               );
             },
