@@ -113,6 +113,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.9.3+1"
+  firebase_analytics:
+    dependency: "direct main"
+    description:
+      name: firebase_analytics
+      sha256: c35213b72c9dbab6a20954bb968ed70e7d9e0ea3acb3426b9d4f4a51a522cdb4
+      url: "https://pub.dev"
+    source: hosted
+    version: "10.5.0"
+  firebase_analytics_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_analytics_platform_interface
+      sha256: "9a8bdbf5345de01f7f1905c9ab6f9bff0b7fd739620d68c16b3b3b639b487dc3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.7.0"
+  firebase_analytics_web:
+    dependency: transitive
+    description:
+      name: firebase_analytics_web
+      sha256: da79ab9c1e32c389cd6224939a0437a9e074783e3f2b51e9dc6d850d769d9af8
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.5"
   firebase_auth:
     dependency: "direct main"
     description:
@@ -161,6 +185,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.8.0"
+  firebase_crashlytics:
+    dependency: "direct main"
+    description:
+      name: firebase_crashlytics
+      sha256: f4a4b046606e306b589bef5c1e268afbfab2e5fddde6de7e4340400465c8d231
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.3.6"
+  firebase_crashlytics_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_crashlytics_platform_interface
+      sha256: "8666b935e29b143297e2923dc8112663854f828d10954a92b8215e7249b55d59"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.6.6"
   firebase_database:
     dependency: "direct main"
     description:
@@ -185,6 +225,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.3+6"
+  firebase_remote_config:
+    dependency: "direct main"
+    description:
+      name: firebase_remote_config
+      sha256: "945fbf4afe6a5eb5fe1bebe9e310c019d2896e15b9dc579914a2be1c832a7030"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.6"
+  firebase_remote_config_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_remote_config_platform_interface
+      sha256: "9d424edcbfb6ff43f5829c67d22cf834083fc7636dee07b4c3e04936818814f9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.4.6"
+  firebase_remote_config_web:
+    dependency: transitive
+    description:
+      name: firebase_remote_config_web
+      sha256: b4bb823426ef65c7af3e7829c1d8babc167951bec11712ac4ac7d884ad57ab3c
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.4.6"
   firebase_storage:
     dependency: "direct main"
     description:

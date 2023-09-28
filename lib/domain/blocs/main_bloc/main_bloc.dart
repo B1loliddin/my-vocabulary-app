@@ -4,7 +4,6 @@ import 'package:my_vocabulary_app/domain/models/word_model.dart';
 import 'package:my_vocabulary_app/services/database_service.dart';
 
 part 'main_event.dart';
-
 part 'main_state.dart';
 
 class MainBloc extends Bloc<MainEvent, MainState> {

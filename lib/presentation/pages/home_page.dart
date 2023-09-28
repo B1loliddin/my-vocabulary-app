@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_vocabulary_app/domain/blocs/main_bloc/main_bloc.dart';
 import 'package:my_vocabulary_app/domain/blocs/word_bloc/word_bloc.dart';
 import 'package:my_vocabulary_app/domain/models/word_model.dart';
+import 'package:my_vocabulary_app/services/remote_config_service.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -26,10 +27,14 @@ class _HomePageState extends State<HomePage> {
   void _deleteWord(String wordId) =>
       BlocProvider.of<WordBloc>(context).add(DeleteWordEvent(wordId: wordId));
 
+  void _remoteConfigSetUp() =>
+      RemoteConfigService.activate().then((value) => setState(() {}));
+
   @override
   void initState() {
     super.initState();
     _getData();
+    _remoteConfigSetUp();
   }
 
   @override
@@ -40,6 +45,19 @@ class _HomePageState extends State<HomePage> {
         Scaffold(
           appBar: AppBar(
             title: const Text('Home Page'),
+            actions: [
+              Text(
+                RemoteConfigService.season == 'winter'
+                    ? 'Winter'
+                    : RemoteConfigService.season == 'spring'
+                        ? 'Spring'
+                        : RemoteConfigService.season == 'summer'
+                            ? 'Summer'
+                            : 'Autumn',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const SizedBox(width: 15),
+            ],
           ),
           body: BlocConsumer<MainBloc, MainState>(
             listener: (context, state) {
